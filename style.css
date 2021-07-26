@@ -4,14 +4,38 @@ html {
   box-sizing: border-box;
 }
 /* Loader */
-/* .loader {
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(57deg, #fadcdc 0%, #c98d79 80%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.8s opacity 0.5s ease;
+  z-index: 1000;
+}
+.loader.hidden {
+  animation: fadeOut 1.4s forwards;
+}
+@keyframes fadeOut {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.spinner {
   border: 16px solid #f3f3f3;
   border-top: 16px solid #1f0700;
   border-radius: 50%;
   width: 120px;
   height: 120px;
-  animation: spin 2s linear infinite;
-} */
+  animation: spin 1.4s linear infinite;
+}
 
 @keyframes spin {
   0% {
@@ -108,5 +132,10 @@ button:active {
 
   .quote-text {
     font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 380px) {
+  .quote-text {
+    font-size: 2rem;
   }
 }
